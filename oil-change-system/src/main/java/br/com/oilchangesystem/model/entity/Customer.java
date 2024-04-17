@@ -63,4 +63,8 @@ public class Customer {
         this.email = email;
     }
 
+    public List<Vehicle> getVehicles() {
+        return vehicles;
+    }
+
 }
