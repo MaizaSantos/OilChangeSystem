@@ -50,9 +50,9 @@ public class Vehicle {
 
     public Vehicle() {}
 
-    public Vehicle(Long id, Customer customer, String brand, String model, String color, Integer productionYear, String motor,
-                   String plate, String fuelFilter, String motorFilter, String oilFilter, String cabinFilter,
-                   Integer sumpCapacity, Boolean sumpProtector, String oil, Integer km) {
+    public Vehicle(Long id, Customer customer, String brand, String model, String color, Integer productionYear,
+                   String motor, String plate, String fuelFilter, String motorFilter, String oilFilter,
+                   String cabinFilter, Integer sumpCapacity, Boolean sumpProtector, String oil, Integer km) {
         this.id = id;
         this.customer = customer;
         this.brand = brand;
