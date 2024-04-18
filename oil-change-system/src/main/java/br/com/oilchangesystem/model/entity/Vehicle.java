@@ -181,4 +181,8 @@ public class Vehicle {
         this.km = km;
     }
 
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
 }
