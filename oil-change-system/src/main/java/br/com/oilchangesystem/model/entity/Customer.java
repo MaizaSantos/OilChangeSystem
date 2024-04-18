@@ -1,11 +1,13 @@
 package br.com.oilchangesystem.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import jakarta.persistence.*;
 
 import java.util.List;
 
 @Entity
 @Table
+@JsonPropertyOrder({ "id", "name", "phone", "email", "active", "vehicles"})
 public class Customer {
 
     @Id
@@ -19,6 +21,8 @@ public class Customer {
 
     @Column(unique = true)
     private String email;
+
+    private Boolean isActive;
 
     @OneToMany(mappedBy = "customer")
     private List<Vehicle> vehicles;
@@ -61,6 +65,14 @@ public class Customer {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Boolean getActive() {
+        return isActive;
+    }
+
+    public void setActive(Boolean active) {
+        isActive = active;
     }
 
     public List<Vehicle> getVehicles() {

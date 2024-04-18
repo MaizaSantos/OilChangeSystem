@@ -47,4 +47,13 @@ public class CustomerService {
         return customerRepository.save(customer);
     }
 
+    public void disable(Long id) {
+        Customer customer = findById(id);
+
+        customer.setActive(false);
+        customer.getVehicles().forEach(vehicle -> vehicle.setActive(false));
+
+        customerRepository.save(customer);
+    }
+
 }

@@ -14,6 +14,8 @@ public class Service {
 
     private String name;
 
+    private Boolean isActive;
+
     @OneToMany(mappedBy = "service")
     private List<ServiceRecord> serviceRecord;
 
@@ -30,6 +32,14 @@ public class Service {
 
     public String getName() {
         return name;
+    }
+
+    public Boolean getActive() {
+        return isActive;
+    }
+
+    public void setActive(Boolean active) {
+        isActive = active;
     }
 
 }

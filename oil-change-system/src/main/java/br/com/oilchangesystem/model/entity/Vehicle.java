@@ -47,6 +47,8 @@ public class Vehicle {
 
     private Integer km;
 
+    private Boolean isActive;
+
     @OneToMany(mappedBy = "vehicle")
     private List<ServiceRecord> serviceRecord;
 
@@ -179,6 +181,14 @@ public class Vehicle {
 
     public void setKm(Integer km) {
         this.km = km;
+    }
+
+    public Boolean getActive() {
+        return isActive;
+    }
+
+    public void setActive(Boolean active) {
+        isActive = active;
     }
 
     public void setCustomer(Customer customer) {

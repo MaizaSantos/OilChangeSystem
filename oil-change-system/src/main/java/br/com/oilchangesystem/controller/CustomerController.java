@@ -36,4 +36,10 @@ public class CustomerController {
         return customerService.update(id, customer);
     }
 
+    @PutMapping("/disable/{id}")
+    public ResponseEntity<Void> disable(@PathVariable Long id) {
+        customerService.disable(id);
+        return ResponseEntity.noContent().build();
+    }
+
 }
