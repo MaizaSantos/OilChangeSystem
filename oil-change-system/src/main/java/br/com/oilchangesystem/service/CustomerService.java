@@ -37,4 +37,14 @@ public class CustomerService {
         return customerRepository.findById(id).get();
     }
 
+    public Customer update(Long id, Customer customerUpdated) {
+        Customer customer = findById(id);
+
+        customer.setName(customerUpdated.getName());
+        customer.setEmail(customerUpdated.getEmail());
+        customer.setPhone(customerUpdated.getPhone());
+
+        return customerRepository.save(customer);
+    }
+
 }
