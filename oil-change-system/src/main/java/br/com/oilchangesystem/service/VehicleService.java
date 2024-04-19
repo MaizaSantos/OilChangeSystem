@@ -29,4 +29,8 @@ public class VehicleService {
         return vehicleRepository.findAll();
     }
 
+    public Vehicle findById(Long id) {
+        return vehicleRepository.findById(id).get();
+    }
+
 }
