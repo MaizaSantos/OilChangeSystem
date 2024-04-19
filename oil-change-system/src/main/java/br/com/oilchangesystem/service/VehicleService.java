@@ -7,6 +7,8 @@ import br.com.oilchangesystem.repository.VehicleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class VehicleService {
 
@@ -21,6 +23,10 @@ public class VehicleService {
 
         vehicle.setCustomer(customer);
         return vehicleRepository.save(vehicle);
+    }
+
+    public List<Vehicle> findAll() {
+        return vehicleRepository.findAll();
     }
 
 }

@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/vehicles")
 public class VehicleController {
@@ -17,6 +19,11 @@ public class VehicleController {
     @PostMapping("/{id}")
     public ResponseEntity<Vehicle> save(@PathVariable Long id, @RequestBody Vehicle vehicle) {
         return ResponseEntity.status(HttpStatus.CREATED).body(vehicleService.save(id, vehicle));
+    }
+
+    @GetMapping
+    public List<Vehicle> findAll() {
+        return vehicleService.findAll();
     }
 
 }
