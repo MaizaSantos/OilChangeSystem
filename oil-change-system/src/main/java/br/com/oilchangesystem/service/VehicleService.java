@@ -51,4 +51,12 @@ public class VehicleService {
         return vehicleRepository.save(vehicle);
     }
 
+    public void disable(Long id) {
+        Vehicle vehicle = vehicleRepository.findById(id).get();
+
+        vehicle.setActive(false);
+        
+        vehicleRepository.save(vehicle);
+    }
+
 }

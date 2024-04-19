@@ -36,4 +36,10 @@ public class VehicleController {
         return vehicleService.update(id, vehicle);
     }
 
+    @PutMapping("/disable/{id}")
+    public ResponseEntity<Void> disable(@PathVariable Long id) {
+        vehicleService.disable(id);
+        return ResponseEntity.noContent().build();
+    }
+
 }
