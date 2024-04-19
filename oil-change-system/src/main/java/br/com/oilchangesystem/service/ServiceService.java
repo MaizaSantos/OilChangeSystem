@@ -24,4 +24,12 @@ public class ServiceService {
         return serviceRepository.findById(id).get();
     }
 
+    public void disable(Long id) {
+        Service service = serviceRepository.findById(id).get();
+
+        service.setActive(false);
+        
+        serviceRepository.save(service);
+    }
+
 }

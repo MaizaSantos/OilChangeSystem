@@ -31,4 +31,10 @@ public class ServiceController {
         return serviceService.findById(id);
     }
 
+    @PutMapping("/disable/{id}")
+    public ResponseEntity<Void> disable(@PathVariable Long id) {
+        serviceService.disable(id);
+        return ResponseEntity.noContent().build();
+    }
+
 }
