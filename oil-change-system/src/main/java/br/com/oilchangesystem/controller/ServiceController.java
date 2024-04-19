@@ -26,4 +26,9 @@ public class ServiceController {
         return serviceService.findAll();
     }
 
+    @GetMapping("/{id}")
+    public Service findById(@PathVariable Long id) {
+        return serviceService.findById(id);
+    }
+
 }

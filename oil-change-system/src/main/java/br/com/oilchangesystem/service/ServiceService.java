@@ -20,4 +20,8 @@ public class ServiceService {
         return serviceRepository.findAll();
     }
 
+    public Service findById(Long id) {
+        return serviceRepository.findById(id).get();
+    }
+
 }
