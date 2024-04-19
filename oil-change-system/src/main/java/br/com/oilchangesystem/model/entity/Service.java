@@ -1,5 +1,6 @@
 package br.com.oilchangesystem.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -34,6 +35,7 @@ public class Service {
         return name;
     }
 
+    @JsonProperty("isActive")
     public Boolean getActive() {
         return isActive;
     }

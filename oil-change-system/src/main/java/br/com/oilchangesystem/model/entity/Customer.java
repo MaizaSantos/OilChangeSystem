@@ -1,5 +1,6 @@
 package br.com.oilchangesystem.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import jakarta.persistence.*;
 
@@ -7,7 +8,7 @@ import java.util.List;
 
 @Entity
 @Table
-@JsonPropertyOrder({ "id", "name", "phone", "email", "active", "vehicles"})
+@JsonPropertyOrder({ "id", "name", "phone", "email", "isActive", "vehicles"})
 public class Customer {
 
     @Id
@@ -67,6 +68,7 @@ public class Customer {
         this.email = email;
     }
 
+    @JsonProperty("isActive")
     public Boolean getActive() {
         return isActive;
     }
