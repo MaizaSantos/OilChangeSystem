@@ -33,4 +33,22 @@ public class VehicleService {
         return vehicleRepository.findById(id).get();
     }
 
+    public Vehicle update(Long id, Vehicle vehicleUpdated) {
+        Vehicle vehicle = vehicleRepository.findById(id).get();
+
+        vehicle.setColor(vehicleUpdated.getColor());
+        vehicle.setMotor(vehicleUpdated.getMotor());
+        vehicle.setPlate(vehicleUpdated.getPlate());
+        vehicle.setFuelFilter(vehicleUpdated.getFuelFilter());
+        vehicle.setMotorFilter(vehicleUpdated.getMotorFilter());
+        vehicle.setOilFilter(vehicleUpdated.getOilFilter());
+        vehicle.setCabinFilter(vehicleUpdated.getCabinFilter());
+        vehicle.setSumpCapacity(vehicleUpdated.getSumpCapacity());
+        vehicle.setSumpProtector(vehicleUpdated.getSumpProtector());
+        vehicle.setOil(vehicleUpdated.getOil());
+        vehicle.setKm(vehicleUpdated.getKm());
+
+        return vehicleRepository.save(vehicle);
+    }
+
 }
