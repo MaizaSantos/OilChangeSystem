@@ -13,6 +13,7 @@ public class ServiceService {
     private ServiceRepository serviceRepository;
 
     public Service save(Service service) {
+        service.setActive(true);
         return serviceRepository.save(service);
     }
 

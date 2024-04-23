@@ -22,6 +22,7 @@ public class VehicleService {
         Customer customer = customerRepository.findById(id).get();
 
         vehicle.setCustomer(customer);
+        vehicle.setActive(true);
         return vehicleRepository.save(vehicle);
     }
 

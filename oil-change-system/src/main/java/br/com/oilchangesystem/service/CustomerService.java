@@ -18,13 +18,13 @@ public class CustomerService {
     private VehicleService vehicleService;
 
     public void save(Customer customer) {
+        customer.setActive(true);
         Customer customerSaved = customerRepository.save(customer);
 
         List<Vehicle> vehicles = customer.getVehicles();
         if (!vehicles.isEmpty()) {
             vehicleService.save(customerSaved.getId(), vehicles.getFirst());
         }
-
     }
 
     public List<Customer> findAll() {
