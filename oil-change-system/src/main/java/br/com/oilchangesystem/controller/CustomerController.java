@@ -18,7 +18,8 @@ public class CustomerController {
 
     @PostMapping
     public ResponseEntity<Customer> save(@RequestBody Customer customer) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(customerService.save(customer));
+        customerService.save(customer);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
     @GetMapping

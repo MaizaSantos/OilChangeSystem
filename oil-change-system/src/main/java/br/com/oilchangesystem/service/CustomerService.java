@@ -3,7 +3,6 @@ package br.com.oilchangesystem.service;
 import br.com.oilchangesystem.model.entity.Customer;
 import br.com.oilchangesystem.model.entity.Vehicle;
 import br.com.oilchangesystem.repository.CustomerRepository;
-import br.com.oilchangesystem.repository.VehicleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,17 +15,16 @@ public class CustomerService {
     private CustomerRepository customerRepository;
 
     @Autowired
-    private VehicleRepository vehicleRepository;
+    private VehicleService vehicleService;
 
-    public Customer save(Customer customer) {
+    public void save(Customer customer) {
         Customer customerSaved = customerRepository.save(customer);
 
-        Vehicle vehicle = customer.getVehicles().getFirst();
-        vehicle.setCustomer(customerSaved);
+        List<Vehicle> vehicles = customer.getVehicles();
+        if (!vehicles.isEmpty()) {
+            vehicleService.save(customerSaved.getId(), vehicles.getFirst());
+        }
 
-        vehicleRepository.save(vehicle);
-
-        return customerSaved;
     }
 
     public List<Customer> findAll() {
