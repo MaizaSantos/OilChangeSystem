@@ -1,8 +1,10 @@
 package br.com.oilchangesystem.model.entity;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.CurrentTimestamp;
+import org.hibernate.annotations.SourceType;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Table
@@ -24,11 +26,12 @@ public class ServiceRecord {
     @JoinColumn
     private Service service;
 
-    private LocalDate date;
+    @CurrentTimestamp(source = SourceType.VM)
+    private LocalDateTime date;
 
     public ServiceRecord() {}
 
-    public ServiceRecord(Long id, Customer customer, Vehicle vehicle, Service service, LocalDate date) {
+    public ServiceRecord(Long id, Customer customer, Vehicle vehicle, Service service, LocalDateTime date) {
         this.id = id;
         this.customer = customer;
         this.vehicle = vehicle;
@@ -52,7 +55,7 @@ public class ServiceRecord {
         return service;
     }
 
-    public LocalDate getDate() {
+    public LocalDateTime getDate() {
         return date;
     }
 

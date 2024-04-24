@@ -34,9 +34,9 @@ INSERT INTO service (name, is_active) VALUES ('Troca de filtro de óleo', true);
 INSERT INTO service (name, is_active) VALUES ('Troca de filtro de combustível', true);
 INSERT INTO service (name, is_active) VALUES ('Troca de filtro de cabine', false);
 
-INSERT INTO service_record (customer_id, vehicle_id, service_id, date) VALUES (1, 1, 1, '2023-08-25');
-INSERT INTO service_record (customer_id, vehicle_id, service_id, date) VALUES (2, 2, 3, '2024-02-28');
-INSERT INTO service_record (customer_id, vehicle_id, service_id, date) VALUES (3, 3, 4, '2022-09-15');
-INSERT INTO service_record (customer_id, vehicle_id, service_id, date) VALUES (4, 5, 2, '2024-01-31');
-INSERT INTO service_record (customer_id, vehicle_id, service_id, date) VALUES (5, 6, 5, '2023-06-14');
-INSERT INTO service_record (customer_id, vehicle_id, service_id, date) VALUES (3, 4, 2, '2021-11-13');
+INSERT INTO service_record (customer_id, vehicle_id, service_id, date) VALUES (1, 1, 1, '2024-04-23T18:35:30.581247100');
+INSERT INTO service_record (customer_id, vehicle_id, service_id, date) VALUES (2, 2, 3, '2024-03-20T17:15:20.581247100');
+INSERT INTO service_record (customer_id, vehicle_id, service_id, date) VALUES (3, 3, 4, '2022-01-12T16:45:21.581247100');
+INSERT INTO service_record (customer_id, vehicle_id, service_id, date) VALUES (4, 5, 2, '2021-07-09T14:02:23.581247100');
+INSERT INTO service_record (customer_id, vehicle_id, service_id, date) VALUES (5, 6, 5, '2021-12-15T11:59:59.581247100');
+INSERT INTO service_record (customer_id, vehicle_id, service_id, date) VALUES (3, 4, 2, '2023-11-30T01:32:25.581247100');

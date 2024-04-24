@@ -17,7 +17,7 @@ public class CustomerController {
     private CustomerService customerService;
 
     @PostMapping
-    public ResponseEntity<Customer> save(@RequestBody Customer customer) {
+    public ResponseEntity<Void> save(@RequestBody Customer customer) {
         customerService.save(customer);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
