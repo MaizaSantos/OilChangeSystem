@@ -27,4 +27,9 @@ public class ServiceRecordController {
         return serviceRecordService.findAll();
     }
 
+    @GetMapping("/{id}")
+    public List<ServiceRecord> findAllByCustomerId(@PathVariable Long id) {
+        return serviceRecordService.findAllByCustomerId(id);
+    }
+
 }

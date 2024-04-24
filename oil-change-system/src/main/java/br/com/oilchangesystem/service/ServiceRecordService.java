@@ -22,4 +22,8 @@ public class ServiceRecordService {
         return serviceRecordRepository.findAll(Sort.by(Sort.Direction.DESC, "date"));
     }
 
+    public List<ServiceRecord> findAllByCustomerId(Long id) {
+        return serviceRecordRepository.findByCustomerIdOrderByDateDesc(id);
+    }
+
 }
