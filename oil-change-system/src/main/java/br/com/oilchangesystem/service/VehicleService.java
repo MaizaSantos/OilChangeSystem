@@ -5,6 +5,7 @@ import br.com.oilchangesystem.model.entity.Vehicle;
 import br.com.oilchangesystem.repository.CustomerRepository;
 import br.com.oilchangesystem.repository.VehicleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -27,7 +28,7 @@ public class VehicleService {
     }
 
     public List<Vehicle> findAll() {
-        return vehicleRepository.findAll();
+        return vehicleRepository.findAll(Sort.by(Sort.Direction.ASC, "brand"));
     }
 
     public Vehicle findById(Long id) {
